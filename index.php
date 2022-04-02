@@ -15,6 +15,32 @@
 <p>we can not either make properties or variables in interface and can not assign them value.</p>
 <p>In interface we can declare methods but we can not implement them. we use them for drived class.</p>
 
+<?php
+interface parent1 {
+    function calc($a , $b);
+}
+interface parent2 {
+    function sub($c , $d);
+}
 
+class childclass implements parent1 , parent2 {
+    public function calc ($a , $b) {
+        echo $a + $b;
+    }
+
+    public function sub ($c , $d) {
+        echo $c - $d;
+    }
+}
+?>
+<!-- NOw making Objects of child class and using methods of parent class.  -->
+<?php
+
+$h = new childclass();
+$h->calc(70,5);
+echo "<br>";
+$h->sub(60,9);
+
+?>
 </body>
 </html>
